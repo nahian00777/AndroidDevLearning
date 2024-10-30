@@ -1,6 +1,7 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,17 +17,28 @@ import com.example.myfirstapp.ui.theme.MyFirstAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            MyFirstAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "World",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+        setContentView(R.layout.activity_main)
+        val button = findViewById<Button>(R.id.button1)
+        if (button != null) {
+            button.setOnClickListener {
+                if(button.text == "Click Me") {
+                    button.text = "Hello"
+                } else {
+                    button.text = "Click Me"
                 }
             }
         }
+//        enableEdgeToEdge()
+//        setContent {
+//            MyFirstAppTheme {
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                    Greeting(
+//                        name = "World",
+//                        modifier = Modifier.padding(innerPadding)
+//                    )
+//                }
+//            }
+//        }
     }
 }
 
