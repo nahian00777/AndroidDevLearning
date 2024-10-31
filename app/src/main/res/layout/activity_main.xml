@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
     android:orientation="vertical"
-    android:padding="24dp"> <!-- Apply gradient background -->
+    android:padding="24dp">
 
-    <!-- Title for the page -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +14,7 @@
         android:paddingBottom="16dp"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
+        android:textFontWeight="1000"
         android:textSize="24sp" />
 
     <EditText
@@ -39,26 +39,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginBottom="8dp"
         android:text="Gender"
         android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:textFontWeight="1000"
+        android:textSize="20sp" />
 
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Male"
             android:textColor="#FFFFFF" />
 
         <RadioButton
-            android:id="@+id/radio_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -100,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_background"
-        android:backgroundTint="#070710"
+        android:backgroundTint="#FF242427"
         android:fontFamily="sans-serif-medium"
         android:padding="12dp"
         android:text="Submit"
