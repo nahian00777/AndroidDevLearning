@@ -18,16 +18,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val button = findViewById<Button>(R.id.button1)
-        if (button != null) {
-            button.setOnClickListener {
-                if(button.text == "Click Me") {
-                    button.text = "Hello"
-                } else {
-                    button.text = "Click Me"
-                }
-            }
-        }
+//        val button = findViewById<Button>(R.id.button1)
+//        if (button != null) {
+//            button.setOnClickListener {
+//                if(button.text == "Click Me") {
+//                    button.text = "Hello"
+//                } else {
+//                    button.text = "Click Me"
+//                }
+//            }
+//        }
 //        enableEdgeToEdge()
 //        setContent {
 //            MyFirstAppTheme {
