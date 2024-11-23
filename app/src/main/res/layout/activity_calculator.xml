@@ -5,6 +5,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/back" />-->
+
     <!-- Display screen for showing result -->
     <TextView
         android:id="@+id/display"
