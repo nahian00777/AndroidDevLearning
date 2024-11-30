@@ -9,3 +9,7 @@ class CalculatorActivity : Activity() {
         setContentView(R.layout.activity_calculator) // Make sure this layout file exists
     }
 }
+
+
+// clean code architecture
+// clean code programming book
