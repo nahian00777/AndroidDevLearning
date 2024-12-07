@@ -6,9 +6,11 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapp.R
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CoroutineDemo : AppCompatActivity() {
     private lateinit var tvResult: TextView
@@ -23,7 +25,7 @@ class CoroutineDemo : AppCompatActivity() {
 
 
         btnAction.setOnClickListener {
-            GlobalScope.launch {
+            GlobalScope.launch(Dispatchers.Main) {
                 showUpdate("Wait for some time...")
                 val token = fetchLatestToken()
                 showUpdate(token)
@@ -77,20 +79,26 @@ class CoroutineDemo : AppCompatActivity() {
 
     suspend fun fetchLatestToken(): String {
         // Simulate a long running task
-        delay(3000)
-        return "Token value is 2342"
+        return withContext(Dispatchers.IO) {
+            delay(3000)
+            "Token value is 2342"
+        }
     }
 
     suspend fun fetchUserId(token: String): String {
         // Simulate a long running task
-        delay(3000)
-        return "User ID 123"
+        return withContext(Dispatchers.IO) {
+            delay(3000)
+            "User ID 123"
+        }
     }
 
     suspend fun fetchProfileInfo(userId: String): String {
         // Simulate a long running task
-        delay(3000)
-        return "This is profile info"
+        return withContext(Dispatchers.IO) {
+            delay(3000)
+            "This is profile info"
+        }
     }
 }
 
