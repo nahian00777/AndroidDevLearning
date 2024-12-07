@@ -15,13 +15,24 @@
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".viewmodelclass.FrenchOpenGameActivity"
+            android:name=".coroutine_class.CoroutineDemo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".viewmodelclass.FrenchOpenGameActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".fragmentdemo.SimpleDemoActivity1"
@@ -49,11 +60,13 @@
         <activity
             android:name=".pagerouting.MainPage"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".demo_activity.SampleActivity"
