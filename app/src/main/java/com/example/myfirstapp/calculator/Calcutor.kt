@@ -15,6 +15,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.collections.mutableListOf
 import kotlin.math.min
+
 //import com.udojava.evalex.Expression
 
 
@@ -72,32 +73,37 @@ class Calcutor : AppCompatActivity() {
 
 
         var fromEqual = false
-        fun evaluateExpression(expression: String): String {
-            return Expression(expression).eval().toDouble().toString()
-//            return "hellow";
-        }
-//        fun eval(str: String): String {
-//            var numbers = str.split("[+\\-÷×]".toRegex())
-//            val idx_signs:mutableListOf(2,4)
-//            if(str[0] == '-') numbers[0] = "-"+numbers[0]')
-//            return if(numbers.size == 1){
-//                numbers[0]
-//            }
-//
-//            else if(str.contains('+')){
-//                (numbers[0].toDouble() + numbers[1].toDouble()).toString()
-//            } else if(str.contains('-')){
-//                (numbers[0].toDouble() - numbers[1].toDouble()).toString()
-//            } else if(str.contains('×')){
-//                (numbers[0].toDouble() * numbers[1].toDouble()).toString()
-//            } else if(str.contains('÷')){
-//                (numbers[0].toDouble() / numbers[1].toDouble()).toString()
-//            }else{
-//                return "0"
-//            }
-//
-//        }
+        fun eval(str: String): String {
+            // Replace unsupported operators with supported ones
+            val sanitizedStr = str.replace("*", "×").replace("/", "÷")
 
+            // Split the sanitized string into numbers using regex
+            val numbers = sanitizedStr.split("[+\\-÷×]".toRegex()).toMutableList()
+
+            // Handle negative numbers at the beginning
+            if (sanitizedStr[0] == '-') {
+                numbers[0] = "-" + numbers[1]
+                numbers.removeAt(1) // Remove the next number after merging
+            }
+
+            return try {
+                when {
+                    sanitizedStr.contains('+') -> (numbers[0].toDouble() + numbers[1].toDouble()).toString()
+                    sanitizedStr.contains('-') -> (numbers[0].toDouble() - numbers[1].toDouble()).toString()
+                    sanitizedStr.contains('×') -> (numbers[0].toDouble() * numbers[1].toDouble()).toString()
+                    sanitizedStr.contains('÷') -> (numbers[0].toDouble() / numbers[1].toDouble()).toString()
+                    else -> "0"
+                }
+            } catch (e: Exception) {
+                // Handle any errors during evaluation
+                "Error: ${e.message}"
+            }
+        }
+
+
+        fun evaluateExpression(expression: String): String {
+            return eval(expression).toDouble().toString()
+        }
 
         fun pressBtn(btnName: Int) {
             Log.d("Disp", tvdisp.text.toString())
@@ -198,7 +204,6 @@ class Calcutor : AppCompatActivity() {
             fromEqual = true
 //        Log.d(tvdisp.textSize.toString(),"M")
         }
-
         //accommodate all digits::
     }
 
