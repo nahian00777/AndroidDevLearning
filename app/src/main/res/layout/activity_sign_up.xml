@@ -5,20 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".signup.SignUp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-<!--Progressbar texts-->
+            android:layout_height="wrap_content" />
+
+        <!-- Progressbar texts -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,20 +32,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Progressbar1"
+                android:gravity="start"
+                android:text="Step 1"
                 android:textSize="11sp"
-                android:textStyle="bold"
-                android:gravity="start"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewProgressbar2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Progressbar2"
+                android:gravity="center"
+                android:text="Step 2"
                 android:textSize="11sp"
-                android:textStyle="bold"
-                android:gravity="center"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewProgressbar3"
@@ -50,27 +53,25 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Progressbar3"
+                android:text="Step 3"
                 android:textSize="11sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-
-<!--Forms-->
+        <!-- Forms -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewFormTitle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/FormTitle1"
+                android:text="Personal Information"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/FormInputFName"
@@ -78,59 +79,57 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="name"
                 android:ems="10"
-                android:hint="@string/FormInput1"
+                android:hint="Full Name"
                 android:inputType="text"
                 android:minHeight="48dp" />
+
             <EditText
                 android:id="@+id/FormInputAddress1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/FormInput2"
-                android:inputType="textMultiLine"
-                android:minHeight="48dp"
                 android:autofillHints="postalAddress"
-                />
-
+                android:ems="10"
+                android:hint="Address Line 1"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <EditText
                     android:id="@+id/FormInputAddress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/FormInput3"
-                    android:inputType="text"
-                    android:minHeight="48dp"
-                    android:autofillHints="postalAddress"
                     android:layout_weight="1"
-                    />
+                    android:autofillHints="postalAddress"
+                    android:hint="Address Line 2"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+
                 <EditText
                     android:id="@+id/FormInputZip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/FormInput4"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:autofillHints="postalAddress"
                     android:layout_weight="1"
-                    />
+                    android:autofillHints="postalAddress"
+                    android:hint="Zip Code"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textViewGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/FormGender"
-                    android:textSize="20sp"
-                    />
+                    android:text="Gender"
+                    android:textSize="20sp" />
 
                 <RadioGroup
                     android:id="@+id/RadioGroupGender"
@@ -143,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:layout_weight="1"
-                        android:text="@string/RButtonMale"
+                        android:text="Male"
                         android:textSize="20sp" />
 
                     <RadioButton
@@ -151,26 +150,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
                         android:layout_weight="1"
-                        android:text="@string/RButtonFemale"
+                        android:text="Female"
                         android:textSize="20sp" />
                 </RadioGroup>
-
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="0sp">
+                android:layout_marginTop="0sp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textViewTitleDigitalIdentity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/FormTitleDigitalIdentity"
+                    android:text="Digital Identity"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/FormInputEmail"
@@ -178,11 +175,9 @@
                     android:layout_height="wrap_content"
                     android:autofillHints="email"
                     android:ems="10"
-                    android:hint="@string/FormInputEmail"
+                    android:hint="Email Address"
                     android:inputType="textEmailAddress"
-                    android:minHeight="48dp">
-
-                </EditText>
+                    android:minHeight="48dp" />
 
                 <EditText
                     android:id="@+id/FormInputPass"
@@ -190,9 +185,9 @@
                     android:layout_height="wrap_content"
                     android:autofillHints="password"
                     android:ems="10"
-                    android:hint="@string/FormInputPassword"
+                    android:hint="Password"
                     android:inputType="textPassword"
-                    android:minHeight="48dp"></EditText>
+                    android:minHeight="48dp" />
 
                 <EditText
                     android:id="@+id/FormInputConfirmPass"
@@ -200,12 +195,10 @@
                     android:layout_height="wrap_content"
                     android:autofillHints="password"
                     android:ems="10"
-                    android:hint="@string/FormInputConfirmPassword"
+                    android:hint="Confirm Password"
                     android:inputType="textPassword"
-                    android:minHeight="48dp"></EditText>
-
+                    android:minHeight="48dp" />
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -216,32 +209,26 @@
                     android:id="@+id/SwitchMarketing"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:text="@string/SwitchMessage"
-                    android:textSize="12sp"
                     android:layout_marginTop="20dp"
                     android:gravity="center"
-                    />
+                    android:text="Receive Marketing Updates"
+                    android:textSize="12sp" />
 
                 <CheckBox
                     android:id="@+id/CheckboxTerms"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="20sp"
-                    android:text="@string/CheckBoxMessage">
-
-                </CheckBox>
+                    android:text="I accept the Terms and Conditions" />
 
                 <Button
                     android:id="@+id/ButtonSignup"
+                    android:background="#03A9F4"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="40sp"
-                    android:text="@string/ButtonMessage">
-
-                </Button>
+                    android:text="Sign Up" />
             </LinearLayout>
-
-
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
